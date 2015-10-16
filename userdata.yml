@@ -1,0 +1,14 @@
+#cloud-config
+
+package_update: true
+package_upgrade: true
+
+packages:
+    - git
+    - cowsay
+    - python-pip
+
+runcmd:
+    - git clone https://github.com/TDB-UU/csaas.git
+    - mv csaas home/ubuntu/csaas
+    - pip install Flask
