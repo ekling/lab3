@@ -33,7 +33,8 @@ runcmd:
     - curl -O http://smog.uppmax.uu.se:8080/swift/v1/tweets/tweets_17.txt
     - curl -O http://smog.uppmax.uu.se:8080/swift/v1/tweets/tweets_18.txt
     - curl -O http://smog.uppmax.uu.se:8080/swift/v1/tweets/tweets_19.txt
-    - celery worker -A parse &
-    - python controller.py
+    - sudo -H -u ubuntu bash -c "celery worker -A parse &"
+    - sudo -H -u ubuntu bash -c "python controller.py &"
+    - sudo -H -u ubuntu bash -c "celery flower -A parse &"
 
 

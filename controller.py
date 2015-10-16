@@ -8,7 +8,7 @@ from config import app
 @app.route('/', methods=['GET'])
 def count_tweets():
 
-    queue = [parse.s('tweets_{}.txt'.format(x)) for x in xrange(14,16)]
+    queue = [parse.s('tweets_{}.txt'.format(x)) for x in xrange(0,20)]
     g = group(queue)
 
     res = g()
