@@ -13,6 +13,7 @@ runcmd:
     - git clone https://github.com/ekling/lab3.git /home/ubuntu/lab3
     - cd /home/ubuntu/lab3
     - pip install -r requirements.txt
+    - sudo pip install flower
     - curl -O http://smog.uppmax.uu.se:8080/swift/v1/tweets/tweets_0.txt
     - curl -O http://smog.uppmax.uu.se:8080/swift/v1/tweets/tweets_1.txt
     - curl -O http://smog.uppmax.uu.se:8080/swift/v1/tweets/tweets_2.txt
@@ -36,5 +37,3 @@ runcmd:
     - sudo -H -u ubuntu bash -c "celery worker -A parse &"
     - sudo -H -u ubuntu bash -c "python controller.py &"
     - sudo -H -u ubuntu bash -c "celery flower -A parse &"
-
-
